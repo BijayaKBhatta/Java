@@ -1,0 +1,29 @@
+
+public class SegreGate012 {
+	
+	public static void sort012(int a[], int n)
+    {
+        // code here 
+        int zeroIdx,oneIdx,twoIdx;
+        int low=0;
+        int high = n-1;
+        while(low<high){
+            if(a[low] ==0) {
+                continue;
+                low++;
+            }
+            if(a[high]==0) {
+                a[high] = a[low];
+                a[low]=0;
+                high--;
+                low++;
+            }
+            if(a[high]!=0){
+                high--;
+            }
+        }
+        for(int i=0;i<n;i++){
+         System.out.println(a[i]);
+        }
+    }
+}

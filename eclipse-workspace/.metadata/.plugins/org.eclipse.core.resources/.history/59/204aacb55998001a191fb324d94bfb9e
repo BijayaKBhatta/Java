@@ -1,0 +1,38 @@
+package arrayexample;
+
+import java.util.HashMap;
+
+public class SquareOFSortedArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 HashMap<Integer, String> newmap = new HashMap();
+
+	      // populate hash map
+	      newmap.put(1, "tutorials");
+	      newmap.put(2, "point");
+	      newmap.put(3, "is best");
+
+	      // get value of key 3
+	      String val = (String)newmap.get(3);
+
+	      // check the value
+	      System.out.println("Value for key 3 is: " + val);
+	      
+	}
+	 public int[] sortedSquares(int[] A) {
+		 int low=0, high=A.length;
+		 if(A[0]<0) {
+		 while(low<high) {
+	    	 int mid=(low+high)/2;
+	    	 if(A[mid]<0 && A[mid+1]>0) {
+	    		 break;
+	    	 }
+	     }
+		}
+		    return null;
+	        
+	    }
+
+}

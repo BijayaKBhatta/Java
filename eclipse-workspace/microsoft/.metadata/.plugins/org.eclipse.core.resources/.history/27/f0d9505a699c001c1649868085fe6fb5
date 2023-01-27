@@ -1,0 +1,22 @@
+
+public class HelloWorld {
+// 1000
+//1100
+//0010
+//1110
+	
+	
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		int pathMatrx [][] = {{1,0,0,0},{1,1,0,0},{0,0,1,0},{1,1,1,0}};//new int[4][4];
+		System.out.println(getValidPath(pathMatrx,0,0));
+	}
+
+private static boolean getValidPath(int[][] pathMatrx, int i, int j) {
+	System.out.println("matrix index "+i +"j="+j+"-"+pathMatrx.length+" value- "+pathMatrx[0].length);
+	
+	return false;
+	
+}
+
+}

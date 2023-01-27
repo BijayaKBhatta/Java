@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=http://www.thymeleaf.org
+	xmlns:sec=http://www.thymeleaf.org/extras/spring-security
+	xmlns:shiro=http://www.pollix.at/thymeleaf/shiro>
+
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<title>Travel Data</title>
+</head>
+<body>
+	<h1>Find ID And Source of All Passangers By Destination</h1>
+	<hr>
+	<form action="getSourceInfo" method="post">
+		<div class="input-group flex-nowrap">
+			<span class="input-group-text" id="addon-wrapping">Destination</span>
+			<input type="text" class="form-control" placeholder="Username"
+				name="destination" aria-label="Username"
+				aria-describedby="addon-wrapping">
+		</div>
+		<!-- Destination: <input type="text" name="destination"/>
+ -->
+		<input type="submit" value="search">
+
+	</form>
+	<tr th:if="${Data}">
+		<h1>Id And Source With Destination</h1>
+		<hr>
+		<table border="1" class="table table-bordered table-lg mt-2">
+			<thead>
+				<tr>
+					<td>Booking Id</td>
+					<td>Source</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="data: ${Data}">
+					<td th:text="${data.bookingId}"></td>
+					<td th:text="${data.source}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</tr>
+</body>
+</html>

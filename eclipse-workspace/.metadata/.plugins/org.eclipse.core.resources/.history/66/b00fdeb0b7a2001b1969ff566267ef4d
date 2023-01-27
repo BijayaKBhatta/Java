@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);  
+}  
+
+public class FunctionalInterfaceExample implements sayable{
+
+	 public void say(String msg){  
+	        System.out.println(msg);  
+	    } 
+	public static void main(String[] args) {
+		ArrayList<Integer> alist = new ArrayList<Integer>();
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+		alist.add(10);
+
+		System.out.println("size="+alist.size());
+		
+		FunctionalInterfaceExample fie = new FunctionalInterfaceExample();  
+	    fie.say("Hello there"); 
+	} 
+
+}

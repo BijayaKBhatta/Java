@@ -1,0 +1,16 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class StringPermutation {
+public static void main(String[] args) {
+	String s = "ABC";
+	List<String> permutation = new ArrayList<>();
+	getPermutaion(s);
+	
+}
+
+private static void getPermutaion(String s) {
+	// TODO Auto-generated method stub
+	
+}
+}

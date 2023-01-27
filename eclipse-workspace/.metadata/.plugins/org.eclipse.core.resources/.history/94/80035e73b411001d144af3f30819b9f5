@@ -1,0 +1,11 @@
+package com.dp.command;
+
+public class SaveTextFileOperation implements TextFileOperation{
+
+	@Override
+	public String execute() {
+		// TODO Auto-generated method stub
+		return textFile.save();
+	}
+
+}

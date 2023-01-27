@@ -1,0 +1,48 @@
+package arrayexample;
+
+import java.util.HashMap;
+import java.util.Stack;
+
+public class SquareOFSortedArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 Stack<String> STACK = new Stack<String>(); 
+		 System.out.println(STACK.peek()+":::::::");
+	        // Use push() to add elements into the Stack 
+	        STACK.push("Welcome"); 
+	        STACK.push("To"); 
+	        STACK.push("Geeks"); 
+	        STACK.push("For"); 
+	        STACK.push("Geeks"); 
+	        
+		 HashMap<Integer, String> newmap = new HashMap();
+
+	      // populate hash map
+	      newmap.put(1, "tutorials");
+	      newmap.put(2, "point");
+	      newmap.put(3, "is best");
+
+	      // get value of key 3
+	      String val = (String)newmap.get(5);
+
+	      // check the value
+	      System.out.println("Value for key 3 is: " + val);
+	      
+	}
+	 public int[] sortedSquares(int[] A) {
+		 int low=0, high=A.length;
+		 if(A[0]<0) {
+		 while(low<high) {
+	    	 int mid=(low+high)/2;
+	    	 if(A[mid]<0 && A[mid+1]>0) {
+	    		 break;
+	    	 }
+	     }
+		}
+		    return null;
+	        
+	    }
+
+}

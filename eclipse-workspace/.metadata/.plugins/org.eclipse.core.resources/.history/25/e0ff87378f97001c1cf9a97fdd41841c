@@ -1,0 +1,23 @@
+package com.scalar.examples;
+
+public class StringReverse {
+	public static void main(String[] args) {
+		reverse("bijaya");
+	}
+	public static String reverse(String str) {
+		if(str.length()==1) {
+			return str;
+		}
+		
+		return reverse(str.substring(0, str.length()-1))+str.toCharArray()[str.length()-1];
+	
+	}
+
+}
+
+
+bijaya
+
+b i j a y a 
+
+a 

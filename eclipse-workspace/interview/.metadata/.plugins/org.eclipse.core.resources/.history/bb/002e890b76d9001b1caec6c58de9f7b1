@@ -1,0 +1,54 @@
+
+public class SegreGate012 {
+	
+	public static void main(String[] args) {
+		int a[] = new int[] {0,2,1,2,0};
+		sort012(a, a.length);
+	}
+	public static void sort012(int a[], int n)
+    {
+        // code here 
+        int zeroIdx,oneIdx,twoIdx;
+        int low=0;
+        int high = n-1;
+        while(low<high){
+            if(a[low] ==0) {
+            	low++;
+                continue;
+                
+            }
+            if(a[high]==0) {
+                a[high] = a[low];
+                a[low]=0;
+                high--;
+                low++;
+            }
+            if(a[high]!=0){
+                high--;
+            }
+        }
+        
+        
+         low=0;
+         high = n-1;
+        while(low<high){
+            if(a[low] ==0) {
+            	low++;
+                continue;
+                
+            }
+            if(a[high]==0) {
+                a[high] = a[low];
+                a[low]=0;
+                high--;
+                low++;
+            }
+            if(a[high]!=0){
+                high--;
+            }
+        }
+        for(int i=0;i<n;i++){
+         System.out.println(a[i]);
+        }
+    }
+}

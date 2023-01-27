@@ -1,0 +1,26 @@
+					SORTING
+Sorting a collection 
+
+Java Comparable interface - compareTo method 
+
+ s1, s2
+ age1 age2
+ 
+age1==age2 - dont do any changes  - 0 
+age1 > age2(10,5)  - +1
+age1 < age2 (5, 10)  -1
+
+5 10 
+
+
+Java Comparator interface - compare, equals
+
+
+
+class Student {
+
+ int rollNo;
+ String name;
+ int age;
+ 
+}

@@ -1,0 +1,19 @@
+
+public class HelloWorld {
+// 1000
+//1100
+//0010
+//1110
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int pathMatrx [][] = {{1,0,0,0},{1,1,0,0},{0,0,1,0},{1,1,1,0}};//new int[4][4];
+		getValidPath(pathMatrx,0,0);
+	}
+
+private static void getValidPath(int[][] pathMatrx, int i, int j) {
+	// TODO Auto-generated method stub
+	
+	
+}
+
+}

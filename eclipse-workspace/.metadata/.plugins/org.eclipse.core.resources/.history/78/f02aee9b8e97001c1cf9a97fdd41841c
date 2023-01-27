@@ -1,0 +1,12 @@
+package com.scalar.examples;
+
+public class StringReverse {
+	public static void main(String[] args) {
+		reverse("bijaya");
+	}
+	public static void reverse(String str) {
+		
+	
+	}
+
+}

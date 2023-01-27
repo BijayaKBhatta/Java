@@ -1,0 +1,11 @@
+public class ThreadCreationExample {
+
+	public static void main(String[] args) {
+		myRunnable r = new myRunnable();
+		Thread t = new Thread(r);
+		//t.start();
+		t.run();
+	}
+	
+}
+

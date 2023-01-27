@@ -1,0 +1,26 @@
+package hashtable;
+
+import java.util.HashMap;
+import java.util.Map;
+
+//https://vimeo.com/384552045
+//https://leetcode.com/problems/palindrome-permutation/
+//https://trello.com/c/b9RxXsrr/70-palindrome-permutation
+public class CheckifPermutationisPalindromeQ3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public boolean canPermutationPalidrom(String s) {
+		Map<Character, Integer> map =  new HashMap<Character, Integer>();
+		for(int i=0;i<s.length();i++) {
+			if(map.containsKey(s.charAt(i))){
+				map.remove(s.charAt(i));
+			}
+			
+		}
+		return false;
+	}
+
+}

@@ -1,0 +1,25 @@
+package hashtable;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSumandFind {
+
+	Map<Integer, Integer> m  = new HashMap<Integer, Integer>();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TwoSumandFind t = new TwoSumandFind();
+		
+	}
+
+	public TwoSumandFind() {
+		
+	}
+	public void add(int number) {
+		
+		
+	}
+	public boolean find(int value) {
+		return false;
+	}
+}

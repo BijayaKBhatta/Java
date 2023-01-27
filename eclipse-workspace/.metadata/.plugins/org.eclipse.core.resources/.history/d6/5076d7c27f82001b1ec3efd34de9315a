@@ -1,0 +1,16 @@
+
+public class ThreadPriority {
+	public static void main(String[] args) {
+		myThread t = new myThread();
+		t.setPriority(10);
+		
+		t.start();
+		for(int i=0;i<10;i++) {
+			System.out.println("main thread");
+		}
+		System.out.println("priority of main"+Thread.currentThread().getPriority());
+		System.out.println("priority of t"+t.getPriority());
+
+	}
+
+}

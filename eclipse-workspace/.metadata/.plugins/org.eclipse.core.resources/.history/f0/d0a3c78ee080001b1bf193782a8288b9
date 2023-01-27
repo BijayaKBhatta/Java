@@ -1,0 +1,14 @@
+package arrayexample;
+
+public class test {
+	public static void main(String []args){  
+        try{  
+            int a = 1;   
+            System.out.println(a/0);  
+        }  
+     
+        System.out.println("rest of the code.......");  
+
+	} 
+
+}

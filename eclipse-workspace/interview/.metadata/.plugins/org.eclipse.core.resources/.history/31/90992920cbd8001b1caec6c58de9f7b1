@@ -1,0 +1,15 @@
+
+public class TestPalidrome {
+// number of palidrome in a word 
+	
+	// input - string 
+	// output - int 4
+	
+	// example - abccba - 1,2,3
+	
+	public static void main(String[] args) {
+		String checkPalidrome = "abccba";
+		
+	}
+	
+}

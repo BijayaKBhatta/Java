@@ -1,0 +1,10 @@
+public class ThreadCreationExample {
+
+	public static void main(String[] args) {
+		myRunniable r = new myRunniable();
+		Thread t = new Thread(r);
+		t.start();
+	}
+	
+}
+

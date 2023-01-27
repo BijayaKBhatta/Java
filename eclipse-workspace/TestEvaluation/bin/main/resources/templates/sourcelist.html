@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Source Information</title>
+</head>
+<body>
+	<h1>Related Source With Destination</h1>
+	<hr>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>Booking Id</td>
+				<td>Source</td>
+			</tr>
+		</thead>
+		<tbody>
+		<tr th:if="${allData.empty}">
+		<td colspan="2">Please provide destination to search</td>
+		</tr>
+			<tr th:each="data: ${allData}">
+				<td th:text="${data.bookingId}"></td>
+				<td th:text="${data.source}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;BasicThreadCommuncation.java&apos; to &apos;ThreadingExample/src/threadcommunication&apos;&#x0A;- Original project: &apos;ThreadingExample&apos;&#x0A;- Destination element: &apos;ThreadingExample/src/threadcommunication&apos;&#x0A;- Original element: &apos;basicExample.BasicThreadCommuncation.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;threadcommunication" element1="/src&lt;basicExample{BasicThreadCommuncation.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1625371566948" units="1" version="1.0"/>
+</session>

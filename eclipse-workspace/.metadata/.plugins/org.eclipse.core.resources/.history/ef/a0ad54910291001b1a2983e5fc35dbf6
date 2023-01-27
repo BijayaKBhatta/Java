@@ -1,0 +1,16 @@
+package predicate;
+
+import java.util.function.Predicate;
+
+public class AgeTestUsingPredicate {
+
+	public static void main(String[] args) {
+		//Predicate<Integer> p = n->{return n>10?true:false;};
+		//Predicate<Integer> p = n->n>10;
+		//System.out.println(p.test(10));
+		
+		Predicate<Integer> digit = dig->{return dig%2==0;} ;
+		digit.test(22);
+		
+	}
+}

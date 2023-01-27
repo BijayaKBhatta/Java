@@ -1,0 +1,25 @@
+
+public class TestPalidrome {
+// number of palidrome in a word 
+	
+	// input - string 
+	// output - int 4
+	
+	// example - abccba - 1,2,3
+	
+	public static void main(String[] args) {
+		String checkPalidrome = "abccba";
+		for(int i=1;i<checkPalidrome.length();i++) {
+			String word = checkPalidrome.substring(0,i);
+			char wordC [] = new char[word.length()];
+			
+			String reverseWord = reverse(wordC);
+		}
+	}
+
+private static String reverse(char[] wordC) {
+	// TODO Auto-generated method stub
+	return null;
+}
+	
+}

@@ -1,0 +1,116 @@
+
+//Problem:
+//Tower of Hanoi problem with any number (>=3) of towers
+//-----------------------------------------------------------------------------
+
+import java.util.Scanner;  // Import the Scanner class
+import java.io.*; // Import the I/O library
+
+public class Test {
+
+	// ---------------------------------------------------------------------
+	// Function: Empty Constructor
+	// ---------------------------------------------------------------------
+	public Test ()
+	{
+	}
+
+	// ---------------------------------------------------------------------
+	// Function: Prints every move on screen and also writes it to a file
+	// ---------------------------------------------------------------------
+	public int print_move (int disc, int source_tower, int destination_tower, FileWriter writer)
+	{
+		try {
+			System.out.printf("\nMove disk %d from T%d to T%d", disc, source_tower, destination_tower);
+			writer.write("\n" + disc + "\t" +  source_tower + "\t" + destination_tower);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	// ---------------------------------------------------------------------
+	// Function: The recursive function for moving n discs 
+	//           from s to d with t-2 buffer towers.
+	//           It prints all the moves with disk numbers.
+	// ---------------------------------------------------------------------
+	public int move_t (int number_of_discs, int number_of_towers, int source_tower, int destination_tower, FileWriter writer)
+	{
+		// The following are hard-coded statements for an example instance (6,5,1,2)
+		// Replace the following with your recursive definition of the move_t function
+		print_move(1,1,4,writer);
+		print_move(2,1,2,writer);
+		print_move(3,1,3,writer);
+		print_move(2,2,3,writer);
+		print_move(1,4,3,writer);
+		print_move(4,1,5,writer);
+		print_move(5,1,4,writer);
+		print_move(6,1,2,writer);
+		print_move(5,4,2,writer);
+		print_move(4,5,2,writer);
+		print_move(1,3,4,writer);
+		print_move(2,3,1,writer);
+		print_move(3,3,2,writer);
+		print_move(2,1,2,writer);
+		print_move(1,4,2,writer);
+
+		return 0;
+	}
+
+	// ---------------------------------------------------------------------
+	// Function: main
+	// ---------------------------------------------------------------------
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+		int n, t, s, d;
+		String my_ID = new String("sb2213");
+
+		if (args.length < 4)
+		{
+			System.out.printf("Usage: java %s_task1 <n> <t> <s> <d>\n", my_ID);
+			return;
+		}
+
+		n = Integer.parseInt(args[0]);  // Read user input n
+		t = Integer.parseInt(args[1]);  // Read user input t
+		s = Integer.parseInt(args[2]);  // Read user input s
+		d = Integer.parseInt(args[3]);  // Read user input d
+
+		// Check the inputs for sanity
+		if (n<1 || t<3 || s<1 || s>t || d<1 || d>t)
+		{
+			System.out.printf("Please enter proper parameters. (n>=1; t>=3; 1<=s<=t; 1<=d<=t)\n");
+			return;
+		}
+
+		// Create the output file name
+		String filename;
+		filename = new String(my_ID + "_ToH_n" + n + "_t" + t + "_s" + s + "_d" + d + ".txt");
+		try {
+			// Create the Writer object for writing to "filename"
+			FileWriter writer = new FileWriter(filename, true);
+
+			// Write the first line: n, t, s, d
+			writer.write(n + "\t" + t + "\t" + s + "\t" + d);
+
+			// Create the object of this class to solve the generalised ToH problem
+			Test ToH = new Test();
+
+			System.out.printf("\nFollowing is a set of dummy moves for n=6, t=5, s=1, d=2");
+			System.out.printf("\nThe output is also written to the file %s", filename);
+
+			// Call the recursive function that solves the ToH problem
+			ToH.move_t(n, t, s, d, writer);
+
+			// Close the file
+			writer.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.printf("\n");
+		return;
+	}
+}

@@ -1,0 +1,5 @@
+package com.scalar.examples;
+
+public class FibonacciExample {
+
+}

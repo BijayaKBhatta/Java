@@ -1,0 +1,38 @@
+package hashtable;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TwoSumandFind {
+
+	Map<Integer, Integer> m  = new HashMap<Integer, Integer>();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TwoSumandFind t = new TwoSumandFind();
+		t.add(1);
+		t.add(3);
+		t.add(5);
+		boolean b = t.find(3);
+		if(b) {
+			System.out.println("Exist:");
+		}else
+			System.out.println("Does not Exist:");
+		
+		
+	}
+
+	public TwoSumandFind() {
+		
+	}
+	public void add(int number) {
+		m.put(number,1);
+		
+	}
+	public boolean find(int value) {
+		
+		for (Map.Entry<Integer,Integer> entry : m.entrySet())  
+			if(m.containsKey(value-entry.getKey()))
+			  return true;
+		return false;
+	}
+}

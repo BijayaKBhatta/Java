@@ -1,0 +1,12 @@
+<html xmlns:th="https://thymeleaf.org">    
+<table>    
+  
+ 
+<tr th:each="book: ${booking}">
+    <td th:text="${book.destination}" />
+    <td th:text="${book.bookingId}" />
+</tr>
+  
+  
+</table>    
+</html>  

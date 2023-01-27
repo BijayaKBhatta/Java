@@ -1,0 +1,9 @@
+package arrayexample;
+
+public class StaticTest {
+	static{  
+		  System.out.println("static block is invoked");  
+		  System.exit(0);  
+		  }  
+}
+

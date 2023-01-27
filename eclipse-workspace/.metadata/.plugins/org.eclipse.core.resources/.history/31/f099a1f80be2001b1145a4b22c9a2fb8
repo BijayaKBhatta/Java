@@ -1,0 +1,109 @@
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+public class comparatorExamples {
+	
+
+	public static void main(String[] args) {
+		//someListTest();
+		//comparatorTest();
+		//threadExample();
+		getSecondHeightestProduct();
+		
+	}
+	// getSecond Height price product 
+	public static void getSecondHeightestProduct() {
+		 List<Product> list=new ArrayList<Product>();  
+         
+	        //Adding Products  
+	        list.add(new Product(1,"HP Laptop",25000f));  
+	        list.add(new Product(3,"Keyboard",300f));  
+	        list.add(new Product(2,"Dell Mouse",150f));  
+	        list.add(new Product(2,"Dell Mouse",250f));  
+	        list.add(new Product(2,"Dell Mouse",350f));  
+		  	  
+	        Product p = list.stream().sorted((p1,p2)->p2.price > p1.price?1:-1).skip(1).findFirst().get();
+	        //System.out.println(p.id+"::"+p.name+"::"+p.price);
+	        System.out.println(p);
+		
+	}
+	
+	public static void threadExample() {
+		System.out.println("Main Thread started");
+		//Runnable r = ()->  System.out.println("child thread");
+		Thread t = new Thread(()->  System.out.println("child thread"));
+		t.start();
+		new Thread(()->  System.out.println("child thread 2")).start();
+		
+		Thread t1 = new Thread(()-> { 
+			for(int i=0;i<10;i++)
+				System.out.println("child thread 3");});
+		t1.start();
+	}
+	// comparator test using java 8 
+	
+	public static void comparatorTest() {
+		 List<Product> list=new ArrayList<Product>();  
+         
+	        //Adding Products  
+	        list.add(new Product(1,"HP Laptop",25000f));  
+	        list.add(new Product(3,"Keyboard",300f));  
+	        list.add(new Product(2,"Dell Mouse",150f));  
+	          
+	        System.out.println("Sorting on the basis of name... with out java 8 "); 
+	       // list.sort(new ProductSortUsingName());
+	        list.forEach(n->System.out.println(n.name));
+	        System.out.println("Sorting on the basis of name... with java 8 "); 
+	        list.sort((p1,p2)->p1.name.compareTo(p2.name));
+	        list.stream().forEach(n->System.out.println(n.name));
+	        //or as below without stream 
+	        //list.forEach(n->System.out.println(n.name));
+	        
+	        list.stream().filter(n->n.price>150).forEach(n->System.out.println(n.price));
+	        
+	}
+	
+	public static void someListTest() {
+		List<String> list = new ArrayList<>();
+		list.add("sdad");
+		list.add("svvf");
+		list.add("111");
+		list.add("222");
+		list.add("33");
+		list.forEach(n->System.out.println(n));
+		System.out.println("List to Array");
+		String a[] = new String[list.size()];
+		a =  (String[]) list.toArray(a);
+		for(String s:a) {
+			System.out.println(s);
+		}
+		
+		
+		List<Integer> list1 = Arrays.asList(10,20,30,40);
+		
+		
+		
+	}
+}
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        super();  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+class ProductSortUsingName implements Comparator<Product>{
+	@Override
+	public int compare(Product o1, Product o2) {
+		// TODO Auto-generated method stub
+		return o1.name.compareTo(o2.name);
+//		return 0;
+	}
+}

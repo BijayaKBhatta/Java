@@ -1,0 +1,39 @@
+
+public class TestPalidrome {
+// number of palidrome in a word 
+	
+	// input - string 
+	// output - int 4
+	
+	// example - abccba - 1,2,3
+	
+	public static void main(String[] args) {
+		String checkPalidrome = "abccba";
+		int len = checkPalidrome.length()-1;
+		int count = 0;
+		for(int i=1;i<len;i++) {
+			String word = checkPalidrome.substring(0,i);
+			char wordC [] = new char[word.length()];
+			String reverseWord = reverse(wordC);
+			//System.out.println(reverseWord);
+			if(word.equals(checkPalidrome.substring(i,len))) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+private static String reverse(char[] wordC) {
+	// TODO Auto-generated method stub
+	int lastIdx = wordC.length-1;
+	for(int i=0;i<wordC.length/2;i++) {
+		System.out.println(wordC[i]);
+		char temp = wordC[i];
+		 wordC[i]  = wordC[lastIdx];
+		 wordC[lastIdx] = temp;
+		 lastIdx--;
+	}
+	return wordC.toString();
+}
+	
+}
